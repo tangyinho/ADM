@@ -1,0 +1,20 @@
+[INFO][2025-06-04 17:35:32] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"6328D62FA56DF0C2EACB34A049B14031","name":"admin","status":"active","level":"administrator","lastLoginAt":"2025-06-04T17:35:31.2992524+08:00","createdAt":"2025-06-04T09:27:48.496304","createdBy":"system","updatedAt":"2025-06-04T09:27:48.496304","updatedBy":"system"}
+[INFO][2025-06-04 17:35:39] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"6328D62FA56DF0C2EACB34A049B14031","name":"admin","status":"active","level":"administrator","lastLoginAt":"2025-06-04T17:35:39.1855408+08:00","createdAt":"2025-06-04T09:27:48.496304","createdBy":"system","updatedAt":"2025-06-04T09:27:48.496304","updatedBy":"system"}

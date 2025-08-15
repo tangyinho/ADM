@@ -1,0 +1,30 @@
+[INFO][2025-06-03 16:03:20] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters WTI.Repository.Models.tbl_User
+[INFO][2025-06-03 16:03:30] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters WTI.Repository.Models.tbl_User
+[INFO][2025-06-03 16:09:25] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":2,"username":"mtrUser","password":"6328D62FA56DF0C2EACB34A049B14031","name":"mtrUser","status":"active","level":"user","lastLoginAt":"2025-05-22T02:51:03.041151Z","createdAt":"2025-05-22T02:51:03.041152Z","createdBy":"admin","updatedAt":"2025-06-03T16:09:25.5117761+08:00","updatedBy":"admin"}

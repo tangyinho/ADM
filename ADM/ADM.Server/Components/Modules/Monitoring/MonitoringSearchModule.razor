@@ -1,0 +1,14 @@
+﻿﻿<div class="row form-inline g-3">
+    <div class="col-12 col-sm-3">
+        <BootstrapInput PlaceHolder="Please enter ..."
+                        @bind-Value="Value.name"
+                        TValue="string"
+                        IsAutoFocus="true"
+                        ShowLabel="true"
+                        DisplayText="Name" />
+    </div>
+
+    <div class="col-12 col-sm-3">
+        <Select @bind-Value="Value.status" ShowLabel="true" DisplayText="Status" PlaceHolder="All" />
+    </div>
+</div>

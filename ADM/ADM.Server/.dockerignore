@@ -1,0 +1,20 @@
+# Ignore build artifacts
+bin/
+obj/
+publish/
+
+# Ignore local dependencies
+.env
+*.log
+
+# Ignore user-specific files
+.vscode/
+.idea/
+*.user
+
+# Ignore Docker-related files
+Dockerfile
+docker-compose.yml
+
+# Ignore secrets and configurations
+secrets.json

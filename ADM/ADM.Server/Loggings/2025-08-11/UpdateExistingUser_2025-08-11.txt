@@ -1,0 +1,10 @@
+[INFO][2025-08-11 14:17:45] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"F06E56288D406684D2C3F166628D4076","name":"administrator","status":"active","level":"administrator","lastLoginAt":"2025-08-11T06:17:45.0904454Z","createdAt":"2025-07-09T06:06:32.839838Z","createdBy":"system","updatedAt":"2025-07-10T02:14:19.590443Z","updatedBy":"admin"}

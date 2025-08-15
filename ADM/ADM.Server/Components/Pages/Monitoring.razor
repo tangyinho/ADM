@@ -1,0 +1,90 @@
+﻿@page "/Monitoring"
+@using ADM.Server.Model.Monitoring;
+@using ADM.Server.Components.Modules.Monitoring;
+
+@inject ToastService ToastService
+@inject IConfiguration Configuration
+@inject IWebHostEnvironment Env
+
+@attribute [TabItemOption(Text = "Table")]
+
+<PageTitle>Equipment Monitoiring</PageTitle>
+
+<p><Button OnClick="() => modal?.Toggle()"> Edit Normal Schedule </Button></p>
+
+<Table TItem="SearchTableRowItemView" AutoGenerateColumns="false" class="table-demo" @ref="tableRef"
+       IsPagination="true" PageItemsSource="PageItemsSource" CustomerSearchModel="@CustomerSearchModel"
+       IsStriped="true" IsBordered="true" IsMultipleSelect="true" ShowRefresh="false" ShowSearchButton="false"
+       ShowAddButton="false" ShowEditButton="true" ShowDeleteButton="false"
+       ShowSkeleton="true" ShowToolbar="true" ShowSearch="true" ShowExtendButtons="false" SearchMode="SearchMode.Top" 
+       ShowExportButton="false" ShowExportPdfButton="false" OnQueryAsync="@OnSearchModelQueryAsync">
+
+    <TableColumns>
+        <TableColumn @bind-Field="@context.id" Width="90" Text="Name" />
+        <TableColumn @bind-Field="@context.model" Width="90" Text="Model"/>
+        <TableColumn @bind-Field="@context.status" Width="90" Text="Status">
+            <Template Context="v">
+                <i class="fa-solid fa-circle @(v.Row.status == "ON" ? "icon-green-color" : "icon-red-color")"></i>
+            </Template>
+        </TableColumn>
+        <TableColumn @bind-Field="@context.next_poweroff_schedule" Width="90" Text="Normal Schedule Start Time" />
+        <TableColumn @bind-Field="@context.next_poweron_schedule" Width="90" Text="Normal Schedule Off Time" />
+        <TableColumn @bind-Field="@context.last_respond_time" Width="90" Text="Last Respond Time" />
+        <TableColumn @bind-Field="@context.last_updated_time" Width="90" Text="Last Updated Time" />
+        <TableColumn @bind-Field="@context.status" Width="90" Text="ON / OFF">
+            <Template Context="v">
+                <Button Text="ON" class="btn-info btn-sm" Icon="fa-solid fa-toggle-off"></Button>
+                <Button Text="OFF" class="btn-secondary btn-sm" Icon="fa-solid fa-power-of"></Button>
+            </Template>
+        </TableColumn>
+    </TableColumns>
+
+    <DetailRowTemplate>
+        (2025/08/12) Monday: 0800 - 2300 <br />
+        (2025/08/13) Monday: 0800 - 2300 <br />
+        (2025/08/14) Monday: 0800 - 2300 <br />
+        (2025/08/15) Monday: 0800 - 2300 <br />
+        (2025/08/16) Monday: 0800 - 2300 <br />
+        (2025/08/17) Monday: 0800 - 2300 <br />
+        (2025/08/18) Monday: 0800 - 2300 <br />
+    </DetailRowTemplate>
+
+    <TableToolbarBeforeTemplate>
+        <TableToolbarComponent>
+            <Button Text="Search" OnClick="OnSearch" class="btn-info btn-sm" Icon="fa-fw fa-solid fa-magnifying-glass"></Button>
+            <Button Text="Reset" OnClick="OnReset" class="btn-secondary btn-sm" Icon="fa-fw fa-solid fa-arrows-rotate"></Button>
+        </TableToolbarComponent>
+    </TableToolbarBeforeTemplate>
+
+    <CustomerSearchTemplate>
+       @if (context is MonitoringSearchView model)
+       {
+            <MonitoringSearchModule @bind-Value="@model"></MonitoringSearchModule>
+       }
+    </CustomerSearchTemplate>
+</Table>
+
+<Modal @ref="modal" IsKeyboard="true">
+    <ModalDialog Title="Edit Normal Schedule" ShowSaveButton="true">
+        <BodyTemplate>
+            <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                    <BootstrapInput PlaceHolder="Please enter ..."
+                        
+                                    Value="0800"
+                                    IsAutoFocus="true"
+                                    IsSelectAllTextOnFocus="true"
+                                    ShowLabel="true"
+                                    DisplayText="Normal Start Time" />
+                </div>
+                <div class="col-12 col-sm-6">
+                    <BootstrapInput PlaceHolder="Please enter ..."
+                                    Value="2200"
+                                    IsSelectAllTextOnEnter="true"
+                                    ShowLabel="true"
+                                    DisplayText="Normal End Time" />
+                </div>
+            </div>
+        </BodyTemplate>
+    </ModalDialog>
+</Modal>

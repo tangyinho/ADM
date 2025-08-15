@@ -1,0 +1,40 @@
+[INFO][2025-07-10 09:44:47] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"F06E56288D406684D2C3F166628D4076","name":"administrator","status":"active","level":"administrator","lastLoginAt":"2025-07-10T01:44:47.8178923Z","createdAt":"2025-07-08T22:06:32.839838Z","createdBy":"system","updatedAt":"2025-07-08T22:06:32.839838Z","updatedBy":"system"}
+[INFO][2025-07-10 10:06:58] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"F06E56288D406684D2C3F166628D4076","name":"administrator","status":"active","level":"administrator","lastLoginAt":"2025-07-10T02:06:58.9172442Z","createdAt":"2025-07-08T22:06:32.839838Z","createdBy":"system","updatedAt":"2025-07-08T22:06:32.839838Z","updatedBy":"system"}
+[INFO][2025-07-10 10:14:12] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"F06E56288D406684D2C3F166628D4076","name":"administrator","status":"active","level":"administrator","lastLoginAt":"2025-07-10T02:13:43.960482Z","createdAt":"2025-07-08T22:06:32.839838Z","createdBy":"system","updatedAt":"2025-07-08T22:06:32.839838Z","updatedBy":"system"}
+[INFO][2025-07-10 10:14:23] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"F06E56288D406684D2C3F166628D4076","name":"administrator","status":"active","level":"administrator","lastLoginAt":"2025-07-10T02:13:43.960482Z","createdAt":"2025-07-09T06:06:32.839838Z","createdBy":"system","updatedAt":"2025-07-10T02:14:19.5904431Z","updatedBy":"admin"}

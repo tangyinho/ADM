@@ -1,0 +1,16 @@
+﻿﻿<div class="row form-inline g-3">
+    <div class="col-12 col-sm-4">
+        <BootstrapInput PlaceHolder="Please enter ..."
+            @bind-Value="Value.subject"
+            TValue="string"
+            IsAutoFocus="true" 
+            ShowLabel="true"
+            DisplayText="Subject" />
+    </div>
+    <div class="col-12 col-sm-4">
+        <Select @bind-Value="Value.status" ShowLabel="true" DisplayText="Status" PlaceHolder="All" />
+    </div>
+    <div class="col-12 col-sm-4">
+        <DateTimePicker @bind-Value="Value.searchStartDate" ShowLabel="true" DisplayText="Start DateTime:" ViewMode="DatePickerViewMode.DateTime" DateTimeFormat="yyyy-MM-dd HH:mm:ss" />
+    </div>
+</div>

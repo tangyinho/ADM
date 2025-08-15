@@ -1,0 +1,84 @@
+﻿@page "/Schedule"
+@using Server.Model.Schedule;
+@using Server.Data;
+@using ADM.Server.Helpers
+ 
+@inject ToastService ToastService
+@inject IJSRuntime JSRuntime
+@inject IConfiguration Configuration
+@inject IWebHostEnvironment Env
+
+<PageTitle>Schedule</PageTitle>
+<div class="page-schedule">
+    <Modal @ref="modal">
+        <ModalDialog Size="Size.Small" Title="@modalTitle">
+            <BodyTemplate>
+                <div>@modalMessage</div>
+            </BodyTemplate>
+        </ModalDialog>
+    </Modal>
+
+    
+    <div id="schedule_search_section">
+        <Card>
+            <HeaderTemplate>Search Schedule History</HeaderTemplate>
+            <BodyTemplate>
+                <Table
+                    TItem="SearchTableRowItemView"
+                    @ref = "tableRef"
+                    IsPagination="true"
+                    IsMultipleSelect="true"
+                    PageItemsSource="new int[] {10,20}"
+                    IsStriped="true"
+                    IsBordered="true"
+                    ShowToolbar="true"
+                    ClickToSelect="true"
+                    ShowAddButton="true"
+                    ShowEditButton="true"
+                    ShowDeleteButton="false"
+                    ShowSearchButton="false"
+                    ShowExtendButtons="false"
+                    ShowResetButton="false"
+                    ShowSearch="true"
+                    ShowRefresh="false" 
+                    AddModalTitle="Add Test Data Window"
+                    EditModalTitle="Edit Test Data Window"
+                    SearchMode="SearchMode.Top" 
+                    OnQueryAsync="@OnSearchModelQueryAsync" 
+                    CustomerSearchModel="@CustomerSearchModel"
+                    @bind-SelectedRows="SelectedRows"
+                >
+
+                    <TableColumns>
+                        <TableColumn @bind-Field="@context.id" Width="90" Text="ID" Readonly=true IsVisibleWhenAdd="false" />
+                        <TableColumn @bind-Field="@context.name" Width="90" Text="Subject" />
+                        <TableColumn @bind-Field="@context.schedule_start" Width="90" Text="Start From" formatString="yyyy-MM-dd HH:mm:ss" Sortable="true" />
+                        <TableColumn @bind-Field="@context.schedule_end" Width="90" Text="End At" formatString="yyyy-MM-dd HH:mm:ss"  /> 
+                        <TableColumn @bind-Field="@context.active" Width="90" Text="Is Active">
+                            <Template Context="v">
+                               @(v.Row.active ? "Active" : "Deleted")
+                            </Template>
+                        </TableColumn>
+                    </TableColumns>
+
+                    <TableToolbarBeforeTemplate>
+                        <TableToolbarComponent>
+                            <Button Text="Search" OnClick="OnSearch" class="btn-info btn-sm" Icon="fa-fw fa-solid fa-magnifying-glass"></Button>
+                            <Button Text="Reset" OnClick="OnReset" class="btn-secondary btn-sm" Icon="fa-fw fa-solid fa-arrows-rotate"></Button>
+                        </TableToolbarComponent>
+                    </TableToolbarBeforeTemplate>
+
+                    <TableExtensionToolbarTemplate>
+                    </TableExtensionToolbarTemplate>
+
+                    <CustomerSearchTemplate>
+                        @if (context is ScheduleSearchView model)
+                        {
+                            <ADM.Server.Components.Modules.Schedule.ScheduleSearchModule @bind-Value="@model" />
+                        }
+                    </CustomerSearchTemplate>
+                </Table>
+            </BodyTemplate>
+        </Card>
+    </div>
+</div>

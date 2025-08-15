@@ -1,0 +1,30 @@
+[INFO][2025-07-09 14:14:09] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"F06E56288D406684D2C3F166628D4076","name":"administrator","status":"active","level":"administrator","lastLoginAt":"2025-07-09T14:14:09.9151828+08:00","createdAt":"2025-07-09T06:06:32.839838","createdBy":"system","updatedAt":"2025-07-09T06:06:32.839838","updatedBy":"system"}
+[INFO][2025-07-09 14:21:12] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"F06E56288D406684D2C3F166628D4076","name":"administrator","status":"active","level":"administrator","lastLoginAt":"2025-07-09T14:21:12.1778256+08:00","createdAt":"2025-07-09T06:06:32.839838","createdBy":"system","updatedAt":"2025-07-09T06:06:32.839838","updatedBy":"system"}
+[INFO][2025-07-09 16:20:24] : Executing SQL: UPDATE "tbl_User" SET 
+                        password = @password,
+                        name = @name,
+                        status = @status,
+                        level = @level,
+                        "lastLoginAt" = @lastLoginAt,
+                        "updatedAt" = @updatedAt,
+                        "updatedBy" = @updatedBy 
+                        WHERE id = @id
+                      with parameters {"id":1,"username":"admin","password":"F06E56288D406684D2C3F166628D4076","name":"administrator","status":"active","level":"administrator","lastLoginAt":"2025-07-09T16:20:24.2393319+08:00","createdAt":"2025-07-09T06:06:32.839838","createdBy":"system","updatedAt":"2025-07-09T06:06:32.839838","updatedBy":"system"}

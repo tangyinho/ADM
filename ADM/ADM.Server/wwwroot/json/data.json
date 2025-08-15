@@ -1,0 +1,98 @@
+﻿[
+  {
+    "id": 1,
+    "model": "NEC Display Monitor 65 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+   
+  },
+  {
+    "id": 2,
+    "model": "NEC Display Monitor 65 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+  },
+  {
+    "id": 3,
+    "model": "NEC Display Monitor 55 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+  },
+  {
+    "id": 4,
+    "model": "NEC Display Monitor 55 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+  },
+
+  {
+    "id": 5,
+    "model": "NEC Display Monitor 55 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+  },
+
+  {
+    "id": 6,
+    "model": "NEC Display Monitor 55 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+  },
+
+  {
+    "id": 7,
+    "model": "NEC Display Monitor 55 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+  },
+  {
+    "id": 8,
+    "model": "NEC Display Monitor 55 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+  },
+
+  {
+    "id": 9,
+    "model": "NEC Display Monitor LifeMax 110 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+  },
+
+  {
+    "id": 10,
+    "model": "NEC Display Monitor LifeMax 110 inch",
+    "status": "ON",
+    "last_updated_time": "2023-10-01T12:00:00Z",
+    "last_respond_time": "2023-10-01T12:00:00Z",
+    "normal_schedule_on": "08:00:00",
+    "normal_schedule_off": "23:00:00"
+  }
+]
