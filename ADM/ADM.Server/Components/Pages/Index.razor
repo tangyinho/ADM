@@ -1,5 +1,110 @@
 ﻿@page "/"
+@using ADM.Server.Model.Monitoring;
+@using ADM.Server.Components.Modules.Monitoring;
+
+@inject ToastService ToastService
 @inject IConfiguration Configuration
+@inject IWebHostEnvironment Env
 
+@attribute [TabItemOption(Text = "Table")]
 
-<PageTitle>Testing</PageTitle>
+<PageTitle>Equipment Monitoiring</PageTitle>
+
+<p><Button OnClick="() => modal?.Toggle()"> Edit All Normal Schedule </Button></p>
+
+<Table TItem="SearchTableRowItemView" AutoGenerateColumns="false" class="table-demo" @ref="tableRef"
+       IsPagination="true" PageItemsSource="PageItemsSource" CustomerSearchModel="@CustomerSearchModel"
+       IsStriped="true" IsBordered="true" IsMultipleSelect="true" ShowRefresh="false" ShowSearchButton="false"
+       ShowAddButton="false" ShowEditButton="true" ShowDeleteButton="false"
+       ShowSkeleton="true" ShowToolbar="true" ShowSearch="true" ShowExtendButtons="false" SearchMode="SearchMode.Top"
+       ShowExportButton="false" ShowExportPdfButton="false" OnQueryAsync="@OnSearchModelQueryAsync">
+
+    <TableColumns>
+        <TableColumn @bind-Field="@context.id" Width="90" Text="ID" Readonly="true" />
+        <TableColumn @bind-Field="@context.name" Width="90" Text="Name" Readonly="true" />
+        <TableColumn @bind-Field="@context.last_schedule_updated_at" Width="90" Text="Schedule Updated At" formatString="yyyy-MM-dd HH:mm:ss" Readonly="true" IsVisibleWhenEdit="false"/> 
+        <TableColumn @bind-Field="@context.model" Width="90" Text="Model" Readonly="true" />
+        <TableColumn @bind-Field="@context.status" Width="90" Text="Status" Readonly="true">
+            <Template Context="v">
+                <div> <i class="fa-solid fa-circle" style="color: @(v.Row.status.Equals("ON") ? "green" : "grey")"></i> @v.Row.status </div>
+            </Template>
+        </TableColumn>
+        <TableColumn @bind-Field="@context.on_schedule" Width="90" Text="Power On At" />
+        <TableColumn @bind-Field="@context.off_schedule" Width="90" Text="Power Off At">
+            <EditTemplate Context="v">
+                <BootstrapInput PlaceHolder="Please enter ..."
+                                TValue="TimeOnly"
+                                IsSelectAllTextOnEnter="true"
+                                ShowLabel="true"
+                                DisplayText="Power Off At" />
+                <div class="col-12" style="color: red; padding-left: 1rem;">
+                    Pleae Enter "00:00 to 23:00" at Start Time and Off Time
+                </div>
+            </EditTemplate>
+        </TableColumn> 
+        <TableColumn @bind-Field="@context.last_respond_time" Width="90" Text="Last Respond Time" formatString="yyyy-MM-dd HH:mm:ss" IsVisibleWhenEdit="false" />
+        <TableColumn @bind-Field="@context.last_updated_time" Width="90" Text="Last Updated Time" formatString="yyyy-MM-dd HH:mm:ss" IsVisibleWhenEdit="false" />
+        <TableColumn @bind-Field="@context.status" Width="90" Text="ON / OFF" IsVisibleWhenEdit="false">
+            <Template Context="v">
+                <Button Text="ON" class="btn-info btn-sm" Icon="fa-solid fa-toggle-off"></Button>
+                <Button Text="OFF" class="btn-secondary btn-sm" Icon="fa-solid fa-power-of"></Button>
+            </Template>
+        </TableColumn>
+    </TableColumns>
+
+    <DetailRowTemplate>
+        <div>
+            <b>Display Monitor Service Time at next 7 days</b><br>
+            (2025/08/12) Monday: 0800 - 2300 <br />
+            (2025/08/13) Tuesday: 0800 - 2300 <br />
+            (2025/08/14) Wednesday: 0800 - 2300 <br />
+            (2025/08/15) Thursday: 0800 - 2300 <br />
+            (2025/08/16) Friday: 0800 - 2300 <br />
+            (2025/08/17) Saturday: 0800 - 2300 <br />
+            (2025/08/18) Sunday: 0800 - 2300 <br />
+        </div>
+    </DetailRowTemplate>
+
+    <TableToolbarBeforeTemplate>
+        <TableToolbarComponent>
+            <Button Text="Search" OnClick="OnSearch" class="btn-info btn-sm" Icon="fa-fw fa-solid fa-magnifying-glass"></Button>
+            <Button Text="Reset" OnClick="OnReset" class="btn-secondary btn-sm" Icon="fa-fw fa-solid fa-arrows-rotate"></Button>
+        </TableToolbarComponent>
+    </TableToolbarBeforeTemplate>
+
+    <CustomerSearchTemplate>
+        @if (context is MonitoringSearchView model)
+        {
+            <MonitoringSearchModule @bind-Value="@model"></MonitoringSearchModule>
+        }
+    </CustomerSearchTemplate>
+</Table>
+
+<Modal @ref="modal" IsKeyboard="true">
+    <ModalDialog Title="Edit All Display Monitor Normal Schedule" ShowSaveButton="true">
+        <BodyTemplate>
+            <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                    <BootstrapInput PlaceHolder="Please enter ..."
+                                    TValue="TimeOnly"
+                                    Value="@allStartTime"
+                                    IsAutoFocus="true" 
+                                    ShowLabel="true"
+                                    DisplayText="Power On At" />
+                </div>
+                <div class="col-12 col-sm-6">
+                    <BootstrapInput PlaceHolder="Please enter ..."
+                                    TValue="TimeOnly"
+                                    Value="@allEndTime"
+                                    IsSelectAllTextOnEnter="true"
+                                    ShowLabel="true"
+                                    DisplayText="Power Off At" />
+                </div>
+
+                <div class="col-12 col-sm-12" style="color: red; padding: 1rem">
+                    Pleae Enter "00:00 to 23:00" at Start Time and Off Time
+                </div>
+            </div>
+        </BodyTemplate>
+    </ModalDialog>
+</Modal>

@@ -1,4 +1,8 @@
-﻿using BootstrapBlazor.Components;
+﻿using ADM.Server.Components.Modules;
+using ADM.Server.Data;
+using ADM.Server.Helpers; 
+using ADM.Server.Model.Schedule;
+using BootstrapBlazor.Components;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -8,10 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Data.Entity;
 using System.Text.Json;
-using ADM.Server.Components.Modules;
-using ADM.Server.Data;
-using ADM.Server.Helpers; 
-using ADM.Server.Model.Schedule;
+using System.Text.Json.Serialization;
 
 namespace ADM.Server.Components.Pages
 {
@@ -42,6 +43,12 @@ namespace ADM.Server.Components.Pages
             try
             {
                 var filePath = Path.Combine(Env.WebRootPath, "json", "schedule.json");
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                    Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
+                };
+
 
                 if (System.IO.File.Exists(filePath))
                 {
@@ -50,8 +57,8 @@ namespace ADM.Server.Components.Pages
 
                 if (testJson is not null && !string.IsNullOrEmpty(testJson))
                 {
-                    Items = JsonSerializer.Deserialize<List<SearchTableRowItemView>>(testJson);
-                    await tableRef?.QueryAsync(); 
+                    Items = JsonSerializer.Deserialize<List<SearchTableRowItemView>>(testJson, options);
+                    await tableRef.QueryAsync(); 
                 }
             }
             catch (Exception ex)

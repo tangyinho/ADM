@@ -40,8 +40,7 @@ namespace ADM.Server.Components.Shared
             var menus = new List<MenuItem>
             {
                 new() { Text = "Index", Icon = "fa-solid fa-fw fa-house", Url = "/" , Match = NavLinkMatch.All,},
-                new() { Text = "Schedule", Icon = "fa-solid fa-fw fa-calendar", Url = "/schedule", },
-                new() { Text = "Monitoring", Icon = "fa-solid fa-fw fa-wrench", Url = "/monitoring" }
+                new() { Text = "Schedule", Icon = "fa-solid fa-fw fa-calendar", Url = "/schedule", }
             };
 
             return menus;

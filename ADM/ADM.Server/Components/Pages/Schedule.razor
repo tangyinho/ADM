@@ -18,7 +18,6 @@
         </ModalDialog>
     </Modal>
 
-    
     <div id="schedule_search_section">
         <Card>
             <HeaderTemplate>Search Schedule History</HeaderTemplate>
@@ -41,24 +40,40 @@
                     ShowResetButton="false"
                     ShowSearch="true"
                     ShowRefresh="false" 
-                    AddModalTitle="Add Test Data Window"
-                    EditModalTitle="Edit Test Data Window"
+                    AddModalTitle="Add New Schedule"
+                    EditModalTitle="Update Existing Schedule"
                     SearchMode="SearchMode.Top" 
                     OnQueryAsync="@OnSearchModelQueryAsync" 
                     CustomerSearchModel="@CustomerSearchModel"
                     @bind-SelectedRows="SelectedRows"
                 >
-
                     <TableColumns>
                         <TableColumn @bind-Field="@context.id" Width="90" Text="ID" Readonly=true IsVisibleWhenAdd="false" />
                         <TableColumn @bind-Field="@context.name" Width="90" Text="Subject" />
-                        <TableColumn @bind-Field="@context.schedule_start" Width="90" Text="Start From" formatString="yyyy-MM-dd HH:mm:ss" Sortable="true" />
-                        <TableColumn @bind-Field="@context.schedule_end" Width="90" Text="End At" formatString="yyyy-MM-dd HH:mm:ss"  /> 
-                        <TableColumn @bind-Field="@context.active" Width="90" Text="Is Active">
-                            <Template Context="v">
-                               @(v.Row.active ? "Active" : "Deleted")
-                            </Template>
+                        <TableColumn @bind-Field="@context.schedule_start" Width="90" Text="Power On Time" formatString="yyyy-MM-dd HH:mm:ss" IsReadonlyWhenEdit="true">
+                            <EditTemplate Context="v">  
+                                <div class="col-12 col-sm-6"> 
+                                    <DateTimePicker ViewMode="DatePickerViewMode.DateTime"
+                                                    TValue="DateTime?"
+                                                    ShowLabel=true 
+                                                    DisplayText="Power On Time"
+                                                    Value="@v.schedule_start" />
+                                </div> 
+                            </EditTemplate>
                         </TableColumn>
+                        <TableColumn @bind-Field="@context.schedule_end" Width="90" Text="Power off At" formatString="yyyy-MM-dd HH:mm:ss"  IsReadonlyWhenEdit="true">
+                            <EditTemplate Context="v">
+                                <div class="col-12 col-sm-6"> 
+                                    <DateTimePicker ViewMode="DatePickerViewMode.DateTime"
+                                                    TValue="DateTime?"
+                                                    ShowLabel=true
+                                                    DisplayText="Power Off Time"
+                                                    Value="@v.schedule_end" />
+                                </div>
+                                <div class="col-12 col-sm-12" style="padding-left:1.0rem; color: red">The Input DateTime format is shown as (Month / Day / Year   Hour : Minutes : Seconds)</div>
+                            </EditTemplate>
+                        </TableColumn>
+                        <TableColumn @bind-Field="@context.status" Width="90" Text="Status" IsVisibleWhenAdd="false" />
                     </TableColumns>
 
                     <TableToolbarBeforeTemplate>
@@ -67,9 +82,6 @@
                             <Button Text="Reset" OnClick="OnReset" class="btn-secondary btn-sm" Icon="fa-fw fa-solid fa-arrows-rotate"></Button>
                         </TableToolbarComponent>
                     </TableToolbarBeforeTemplate>
-
-                    <TableExtensionToolbarTemplate>
-                    </TableExtensionToolbarTemplate>
 
                     <CustomerSearchTemplate>
                         @if (context is ScheduleSearchView model)

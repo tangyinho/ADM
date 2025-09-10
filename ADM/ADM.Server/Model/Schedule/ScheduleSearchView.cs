@@ -1,6 +1,4 @@
-﻿using BootstrapBlazor.Components;
-using System.ComponentModel.DataAnnotations; 
-
+﻿using BootstrapBlazor.Components; 
 namespace ADM.Server.Model.Schedule
 {
     public class ScheduleSearchView : ITableSearchModel
@@ -54,12 +52,4 @@ namespace ADM.Server.Model.Schedule
         public DateTime? searchStartDate { get; set; }
     }
 
-    public enum EnumStatus
-    {
-        [Display(Name = "Active")]
-        active,
-
-        [Display(Name = "In-Active")]
-        inactive
-    }
 }

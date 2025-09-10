@@ -1,98 +1,117 @@
 ﻿[
   {
     "id": 1,
+    "name": "NEC Display Monitor 65 inch 1",
     "model": "NEC Display Monitor 65 inch",
     "status": "ON",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
-   
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   },
   {
     "id": 2,
+    "name": "NEC Display Monitor 65 inch 2",
     "model": "NEC Display Monitor 65 inch",
     "status": "ON",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   },
   {
     "id": 3,
+    "name": "NEC Display Monitor 65 inch 3",
     "model": "NEC Display Monitor 55 inch",
-    "status": "ON",
+    "status": "OFF",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   },
   {
     "id": 4,
+    "name": "NEC Display Monitor 65 inch 4",
     "model": "NEC Display Monitor 55 inch",
     "status": "ON",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   },
 
   {
     "id": 5,
+    "name": "NEC Display Monitor 65 inch 5",
     "model": "NEC Display Monitor 55 inch",
     "status": "ON",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   },
 
   {
     "id": 6,
+    "name": "NEC Display Monitor 65 inch 6",
     "model": "NEC Display Monitor 55 inch",
     "status": "ON",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   },
 
   {
     "id": 7,
+    "name": "NEC Display Monitor 65 inch 7",
     "model": "NEC Display Monitor 55 inch",
     "status": "ON",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   },
   {
     "id": 8,
+    "name": "NEC Display Monitor 65 inch 8",
     "model": "NEC Display Monitor 55 inch",
     "status": "ON",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   },
 
   {
     "id": 9,
+    "name": "NEC Display Monitor LifeMax 110 inch 9",
     "model": "NEC Display Monitor LifeMax 110 inch",
     "status": "ON",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   },
 
   {
     "id": 10,
+    "name": "NEC Display Monitor LifeMax 110 inch 10",
     "model": "NEC Display Monitor LifeMax 110 inch",
     "status": "ON",
     "last_updated_time": "2023-10-01T12:00:00Z",
     "last_respond_time": "2023-10-01T12:00:00Z",
     "normal_schedule_on": "08:00:00",
-    "normal_schedule_off": "23:00:00"
+    "normal_schedule_off": "23:00:00",
+    "last_schedule_updated_at": "2023-10-01T12:00:00Z"
   }
 ]

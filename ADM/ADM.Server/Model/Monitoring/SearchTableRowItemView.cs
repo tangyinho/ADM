@@ -8,20 +8,20 @@ namespace ADM.Server.Model.Monitoring
     {
         public int id { get; set; }
 
+        public string name { get; set; }
+
         public string model { get; set; }
          
         public string status { get; set; }
 
-        public TimeOnly nornormal_schedule_on { get; set; }
+        public TimeOnly on_schedule { get; set; }
 
-        public TimeOnly normal_schedule_off { get; set; }   
-
-        public DateTime next_poweroff_schedule { get; set; }
-
-        public DateTime next_poweron_schedule { get; set; }
+        public TimeOnly off_schedule { get; set; }   
 
         public DateTime last_updated_time { get; set; }
 
         public DateTime last_respond_time { get; set; }
+
+        public DateTime last_schedule_updated_at { get; set; }
     }
 }
